@@ -22,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <ClerkProvider>
       <html
-        lang="en" data-theme="retro"
+        lang="fr" data-theme="retro"
         className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       >
         <body className="min-h-full flex flex-col">{children}</body>
