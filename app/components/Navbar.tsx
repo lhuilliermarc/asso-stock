@@ -1,5 +1,5 @@
 import { UserButton, useUser } from '@clerk/nextjs'
-import { Icon, ListTree, Menu, PackagePlus, X } from 'lucide-react'
+import { Icon, ListTree, Menu, PackagePlus, ShoppingBasket, X } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
@@ -12,6 +12,7 @@ const Navbar = () => {
     const [menuOpen , setMenuOpen] = useState(false)
 
     const navLinks = [
+        {href: "/new-product" , label : "Nouveau produit" , icon : ShoppingBasket},
         {href: "/category" , label : "Catégories" , icon : ListTree}
     ]
 
