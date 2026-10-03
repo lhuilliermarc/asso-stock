@@ -1,5 +1,5 @@
 import { existsSync } from "fs";
-import { mkdir } from "fs/promises";
+import { mkdir, writeFile } from "fs/promises";
 import { NextRequest, NextResponse } from "next/server";
 import path, { join } from "path";
 
@@ -22,6 +22,7 @@ export async function POST(request: NextRequest) {
         const ext = file.name.split('.').pop()
         const UniqueName = crypto.randomUUID() + '.' + ext
         const filePath = join(uploadDir, UniqueName)
+        await writeFile(filePath, buffer)
         const publicPath = `/uploads/${UniqueName}`
         return NextResponse.json({ success: true, path: publicPath })
     } catch (error) {
